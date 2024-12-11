@@ -54,9 +54,9 @@ public class QuizGame {
         frame.add(questionLabel, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
-        trueButton = new JButton("Igaz");
-        falseButton = new JButton("Hamis");
-        skipButton = new JButton("Kihagy");
+        trueButton = new JButton("Ja");
+        falseButton = new JButton("Faszt");
+        skipButton = new JButton("Hagyjuk");
         buttonPanel.add(trueButton);
         buttonPanel.add(falseButton);
         buttonPanel.add(skipButton);
@@ -90,11 +90,11 @@ public class QuizGame {
             enableButtons(false);
             if (answer.equals(question.getAnswer())) {
                 score += 1;
-                feedbackLabel.setText("Helyes válasz!");
+                feedbackLabel.setText("Így van!");
             } else {
                 score -= 0.5;
                 if (score < 0){ score = 0; }
-                feedbackLabel.setText("Helytelen válasz! Helyes válasz: " + question.getAnswer());
+                feedbackLabel.setText("Hülye! Helyes válasz: " + question.getAnswer());
             }
             currentQuestionIndex++;
             delayNextQuestion();
@@ -127,8 +127,8 @@ public class QuizGame {
     }
 
     private void showFinalScore() {
-        String result = score >= PASSING_SCORE ? "Sikeres!" : "Nem sikerült.";
-        JOptionPane.showMessageDialog(frame, "Pontszám: " + score + "\n" + result);
+        String result = score >= PASSING_SCORE ? "Fasza" : "Gatya";
+        JOptionPane.showMessageDialog(frame, "Fucky Wucky " + score + "\n" + result);
         frame.dispose();
     }
 
