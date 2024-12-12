@@ -130,6 +130,7 @@ public class QuizGame {
         String result = score >= PASSING_SCORE ? "Fasza" : "Gatya";
         JOptionPane.showMessageDialog(frame, "Fucky Wucky " + score + "\n" + result);
         frame.dispose();
+        System.exit(0);
     }
 
     private List<Question> loadQuestions(String fileName) {
